@@ -1,0 +1,6 @@
+$.ajax({
+  type: 'PUT',
+  url: '/artists',
+  dataType: 'json',
+  data: { artist: { position: <%= params[:position_mover] %>} },
+});

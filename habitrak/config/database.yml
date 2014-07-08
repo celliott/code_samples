@@ -1,0 +1,41 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+# Install the pg driver:
+#   gem install pg
+# On Mac OS X with macports:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+
+local: &local
+  adapter: postgresql
+  host: localhost
+  username: appitrak
+  password: appitrak
+  pool: 5
+  
+# for connecting to another app's heroku db
+remote: &remote 
+  adapter: postgresql
+  host: # ec2_server
+  database: # heroku_db
+  username: # heroku_db_user
+  password: # heroku_db_pass
+
+development:
+  <<: *local
+  database: appitrak_development
+
+test:
+  <<: *local    
+  database: appitrak_test
+
+production:
+  <<: *local
+  database: appitrak_production

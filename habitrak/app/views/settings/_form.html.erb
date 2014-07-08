@@ -1,0 +1,8 @@
+<div class="habit_type_create">
+  <div class="field">
+    <%= display_error(:name) %>
+    <%= f.text_field :name, :placeholder => 'add custom habit' %>  
+    <%= hidden_field :user_id, @current_user_id %>
+  </div>
+</div>
+

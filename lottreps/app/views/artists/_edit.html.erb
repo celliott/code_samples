@@ -1,0 +1,18 @@
+<div class="center artists-modal">
+  <h2 class="text-center">Edit <%= @artist.name %> </h2>
+  <br />
+  <%= simple_form_for @artist, 
+    :remote => true do |f| 
+  %>
+    <%= render(:partial => 'form', 
+      :locals => {:f => f} 
+    ) %>
+
+    <div class="form-buttons">
+      <%= submit_tag " save ", 
+        :class=> "btn btn-primary" 
+      %>
+      <% end %>
+      <button class="btn" data-dismiss="modal" aria-hidden="true">cancel</button>
+    </div>
+</div>

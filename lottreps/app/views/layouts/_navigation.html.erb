@@ -1,0 +1,24 @@
+<ul class="nav">
+  <li>
+    <%= link_to "view site", root_path %>
+  </li>
+</ul>  
+  <ul class="nav">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        admin
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu" id="hideonclick" role="navigation">
+        <li>
+          <%= link_to('artists', '/admin/artists/?artist_type=1') %>
+        </li> 
+        <li>
+          <%= link_to('collections', '/admin/artists/?artist_type=2') %>
+        </li>
+        <li>
+          <%= link_to('logout', destroy_user_session_path, :method=>'delete', :class => 'right') %>
+        </li>
+      </ul>
+  </li>
+</ul>

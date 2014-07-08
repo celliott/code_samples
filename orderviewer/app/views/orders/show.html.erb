@@ -1,0 +1,75 @@
+<% content_for :title, "Makr Order Viewer | #{@order.order_number}"%>
+
+<div class="row ">
+  <div class="small-2 large-3 columns">
+    <%= link_to "<< Orders", orders_url,{:class => 'orders back-link'} %>
+  </div>
+  <div class="small-8 large-6 columns order">
+    <h4 class="text-center">Order: <%= @order.order_number %></h4>
+    <br />
+    <br />  
+    <div class="order-item">
+      <b><%= @order.ship_to_first_name %> <%= @order.ship_to_last_name %> </b><br />
+      <% if @order.ship_to_company != nil %>
+        <%= @order.ship_to_company %> <br />
+      <% end %>
+      <%= @order.ship_to_addr1 %> <br />
+      <% if @order.ship_to_addr2 != nil %>
+        <%= @order.ship_to_addr2 %> <br />
+      <% end %>
+      <%= @order.ship_to_city %>, <%= @order.ship_to_state %> <%= @order.ship_to_zip %> <br />
+      <% if @order.ship_to_phone != nil %>
+        <%= @order.ship_to_phone %> <br />
+      <% end %>  
+      <br />
+      <% if @order.order_created != nil %>
+        Order Date: <%= @order.order_created.strftime("%m/%d/%Y") %> <br />
+      <% end %>
+      Ship Method: <%= @order.ship_method %> <br />
+      Status: <%= @order.status %> <br />
+      Description: <%= @status_desc %> <br />
+      Items: <%= @order.items.size %>
+    </div>  
+    <br />
+    <br />
+    <% @items.each do |item| %>
+       <br />
+      <h5 class="text-center">Item Number: <%= item.item_number %></h5>
+      <br />  
+      <table class="image-table">
+        <th>Front</th>
+        <% if item.file_2 != "none" %>
+          <th>Back</th>
+        <% end %>
+        <tr>
+          <% s3_key = "orderviewer/#{@order.order_number}/#{item.file_1}" %>
+          <% image_url_1 = generate_secure_s3_url(s3_key) %>
+          <td><%= link_to image_tag(image_url_1, :border => 0, :class => ''), image_url_1, {:class => 'magnific_popup'} %></td>
+          <% if item.file_2 != "none" %>
+            <% s3_key_2 = "orderviewer/#{@order.order_number}/#{item.file_2}" %>
+            <% image_url_2 = generate_secure_s3_url(s3_key_2) %>
+              <td><%= link_to image_tag(image_url_2, :border => 0, :class => ''), image_url_2, {:class => 'magnific_popup'} %></td>
+          <% end %>
+        </tr>
+      </table>
+      
+      <div class="order-item">
+        Product Code: <%= item.product_code %> <br />
+        Product Name: <%= item.product_name %> <br />
+        Quantity: <%= item.quantity %> <br />
+        Paper: <%= item.paper %> <br />
+        Trim Size: <%= item.trim_size %> <br />
+        Final Size: <%= item.final_size %> <br />
+        Score: <%= item.score %> <br />
+        Color Process: <%= item.color_process %> <br />
+        UV Coating: <%= item.uv_coating %> <br />
+        Drill: <%= item.drill %> <br />
+        Pick Out Item: <%= item.pick_out_item %> <br />
+      </div>
+      
+      <br />
+      <br />
+    <% end %>  
+  </div>
+  <div class="small-2 large-3 columns"> </div>
+</div>

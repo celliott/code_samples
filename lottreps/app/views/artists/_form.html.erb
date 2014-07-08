@@ -1,0 +1,29 @@
+<div class="artist_create">
+  <%= f.input :active, 
+    :label => false, 
+    :inline_label => 'Active', 
+    :as => :boolean,
+    input_html: { checked: true }
+  %>
+  <select id="artist_type" name="artist[artist_type]">
+    <option value="1">Artist</option>
+    <option value="2">Collection</option>
+  </select>
+  
+  <%= f.input :name, 
+    :placeholder => 'Name', 
+    :label => false,
+    :input_html => {
+      :class => "input-xxlarge" 
+    }
+  %>
+  <%= f.input :bio, :as => :text, 
+    :placeholder => 'Bio/Description', 
+    :label => false,
+    :input_html => {
+      :class => "input-xxlarge",
+      :rows => 5
+    }
+  %>
+</div>
+

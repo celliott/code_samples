@@ -1,0 +1,40 @@
+<%= simple_form_for :email_form, 
+  :url => url_for(
+    :action => 'create', 
+    :controller => 'email_forms'
+  ), 
+  :remote =>  true, 
+  method: :post do |f| 
+%>
+  <div class="contact_form">
+    <%= f.input :sender_name, 
+      :placeholder => "Your Name", 
+      :label => false,
+      :input_html => {
+        :class => "input-xlarge" 
+      }
+    %>
+    
+    <%= f.input :email, 
+      :placeholder => "Recipient's Email", 
+      :label => false,
+      :input_html => {
+        :class => "input-xlarge" 
+      }
+    %>
+    
+  </div>
+
+  <%= f.hidden_field :artist_name, 
+    :value => @artist.name 
+  %>
+  <%= f.hidden_field :artist_url, 
+    :value => @artist.slug 
+  %>
+  <div class="form-buttons">
+    <%= submit_tag " Send ", 
+      :class=> "btn btn-send" 
+    %> 
+  </div>
+<% end %>
+  

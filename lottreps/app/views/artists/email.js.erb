@@ -1,0 +1,7 @@
+$('.modal-body').html('<%= escape_javascript(render :partial => 'email') %>');
+$('.modal-header').remove();
+
+$(".btn-primary").click(function() {
+  $('#email_progress').removeClass('hide');
+});
+

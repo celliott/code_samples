@@ -1,0 +1,3 @@
+<footer class="footer">
+  <p>&copy; <%= Time.now.year %> habitrak &nbsp;|&nbsp; <%=mail_to "habitrak@cheapandsalty.com", "support", :subject => "habitrak support" %> &nbsp;|&nbsp; <span class="<%= "selected" if params[:controller] == "privacy" %>"><%= link_to("privacy", :controller => 'privacy') %></span></span></p></footer>
+

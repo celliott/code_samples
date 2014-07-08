@@ -1,0 +1,10 @@
+<div class="text-center">
+  <div class="text-center josefin-sans">
+    <h3>Send To A Friend</h3>
+  </div>
+  <%= image_tag("/assets/images/loading.gif", 
+    :id => "email_progress", 
+    :class => 'hide center') 
+  %>
+  <br />
+  <%= render 'email_form' %>

@@ -1,0 +1,19 @@
+<div class="habit_types">
+	<div class="new_habit">
+	  <%= form_for @user_habit, remote: true do |f| %>
+	    <div><%= f.text_field_tag 'new_habit', nil, :placeholder => 'new habit type' %></div>
+	    <div><%= f.submit_tag "add", :id => "add_habit_type" %></div>
+	  <% end %>
+	</div>
+	<br />
+	<h2>select your habits</h2>
+	<br />
+  <div class="habit_types_container">
+	  
+		<ul><% @habits.each do |habit| %>
+	      <li class="<%= "chosen" if @habit_types.exists?(habit.id) %>"> <%= habit.name %></li>
+		  <% end %>
+	  </ul>
+	  
+  </div>
+</div>

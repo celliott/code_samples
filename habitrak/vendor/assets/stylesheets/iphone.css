@@ -1,0 +1,68 @@
+/* iphone fixes */
+
+body {
+  font-size: 490% !important;
+
+}
+
+.menu ul {
+  padding: 15px 2px 0 10px; 
+}
+
+.menu ul li{
+  font-size: 140%; 
+}
+
+.header {
+  font-size: 490% !important;
+
+  height: 20px;
+	background-size: 55%;
+}
+
+.header p {
+  font-size: 490% !important;
+  margin: -3px 0 0 -15px; 
+}
+
+#main_content {
+  min-width: 50%;
+  margin: 40px auto 0 auto;
+}
+
+#main_description {
+  font-size: 120%;
+  margin: 10px 0 50px 0;
+}
+
+#main_content_left {
+  display: block; 
+  margin: 20px 0 0 0;
+  width: 100%;
+  float:left;
+}
+
+#main_content_right {
+  display: block; 
+  padding: 0 0 0 0px;
+  margin: 0 0 0 0;
+  width: 100%;
+  float:left;
+}
+
+
+/* inputs and buttons */
+
+input[type=submit]:hover, .button:hover{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF380), to(#FDD017));
+	background-image: -webkit-linear-gradient(top, #FFF380, #FDD017);
+	background-image: -moz-linear-gradient(top, #FFF380, #FDD017);
+	background-image: -ms-linear-gradient(top, #FFF380, #FDD017);
+	background-image: -o-linear-gradient(top, #FFF380, #FDD017);
+	background-image: linear-gradient(top, #FFF380, #FDD017);
+	border:1px solid #EAC117;
+	text-shadow: #FAF8CC 0px 1px 0px;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
+}

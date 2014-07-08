@@ -1,0 +1,14 @@
+/************************************************
+*
+* Trade Gothic Fonts
+*
+************************************************/
+
+@font-face {
+	font-family: 'BernhardGotURWTOT-ExtLig';
+	src: url('/assets/fonts/BernhardGotURWTOT-ExtLig.eot');
+	src: local('☺'), url('/assets/fonts/BernhardGotURWTOT-ExtLig.woff') format('woff'), url('/assets/fonts/BernhardGotURWTOT-ExtLig.ttf') format('truetype'), url('/assets/fonts/BernhardGotURWTOT-ExtLig.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+

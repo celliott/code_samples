@@ -1,0 +1,44 @@
+<div id="main_content"><h1>Welcome to habitrak!</h1>
+  <div id="main_description">
+    <%=link_to("login", :controller => 'login') %> or <%=link_to("sign up", :controller => 'sign up') %> to start tracking your habits
+  </div>
+  
+  <div id="main_content_left">
+    <div id="main_item">
+      <div id="main_item_description">
+        <h3>Track habits with a press of a button:</h3>
+        <br/>
+        <p>clicking a habit button records the date and time of your habit.</p>
+      </div>
+      <%= image_tag "/images/habits.png", :class => 'main_image' %>
+    </div>
+    <div id="main_item">  
+      <div id="main_item_description">
+        <h3>View your habit trends:</h3>
+        <br/>
+        <p>you can view your habits trends by week or month.</p>
+      </div>
+      <%= image_tag "/images/trends.png", :class => 'main_image' %>
+     </div> 
+   </div> 
+   
+   <div id="main_content_right">   
+     <div id="main_item">
+      <div id="main_item_description">
+        <h3>Use custom or built-in habits types:</h3>
+        <br/>
+        <p>it is easy to add your own custom habits. any habit you add is only for you to see.</p>
+      </div>
+      <%= image_tag "/images/habit_types.png", :class => 'main_image' %>
+    </div>  
+    <div id="main_item">  
+      <div id="main_item_description">
+        <h3>Install habitrak on your iphone:</h3>
+        <br/>
+        <p>go to <%=link_to("www.habitrakapp.com", root_url) %>  on your iphone and follow the popup's instructions.</p>
+      </div>
+      <%= image_tag "/images/iphone.png", :class => 'main_image' %>
+    </div>
+  </div>  
+
+</div>

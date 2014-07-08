@@ -1,0 +1,24 @@
+<% if a.name != 'placeholder' %>
+  <% for artwork in a.artworks.artist_image %>   
+    <div class='image-thumb'>
+    
+      <% if artwork.processed == 1 %>
+        <% bucket_path = "https://lott-reps-prod.s3.amazonaws.com/" %>
+        <% path = artwork.image %>
+        <% path = path.gsub(bucket_path, "") %>
+        <% path = path.gsub("/", "/thumb-") %>
+        <% artwork.image = File.join(bucket_path, path) %>
+      <% end %>
+    
+      <%= link_to "artists/#{a.slug}" do %>
+        <div class="frontpage-artist-thumb <%= artwork.crop_from %>" 
+          style="background-image:url('<%= artwork.image %>')" />
+        </div>
+      <% end %>
+    </div>  
+  <% end %>              
+  <div class="artist-name">
+    <p><%= a.name %></p>
+  </div>
+  <br />
+<% end %>

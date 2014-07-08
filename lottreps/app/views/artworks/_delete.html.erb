@@ -1,0 +1,21 @@
+<div id="center">
+  <h1>confirm deletion</h1>
+  <br />
+  <p>Are you sure you want to delete <%= @artwork.image_original_name %> ?</p>
+  <br />
+<%= form_for(@artwork, 
+  :remote => true,
+  :url => artwork_path(params[:id]), 
+  :method => (:delete)
+) do |f| %>	    
+  <div class="artwork_delete">
+  	<%= submit_tag "delete",
+  	:class => "btn btn-danger" %>	
+  	<% end %>
+  	<button class="btn" data-dismiss="modal" aria-hidden="true">cancel</button>
+	</div>
+</div>
+
+<%= javascript_tag do %>
+  window.artistId = '<%= j params[:artist_id] %>';
+<% end %>

@@ -1,0 +1,9 @@
+<div class='artist-image-thumb'>
+  <% image_link = a.image.gsub('thumb-', '') %>
+  <%= link_to(image_link, 
+    :class => 'magnific_popup') do %>
+    <div class="artist-thumb <%= a.crop_from %>" 
+      style="background-image:url('<%= a.image %>')" />
+    </div>
+  <% end %>
+</div>

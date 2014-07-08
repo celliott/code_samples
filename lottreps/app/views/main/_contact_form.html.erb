@@ -1,0 +1,41 @@
+<%= simple_form_for :contact_form, 
+  :url => url_for(:action => 'create', 
+  :controller => 'contact_forms'), 
+  :remote =>  true, 
+  method: :post do |f| 
+%>
+  <div class="contact_form">
+
+    <%= f.input :name, 
+      :placeholder => "Name", 
+      :label => false,
+      :input_html => {
+        :class => "input-xlarge" 
+      }
+    %>
+
+    <%= f.input :sender_email, 
+      :placeholder => "Email", 
+      :label => false,
+      :input_html => {
+        :class => "input-xlarge" 
+      }
+    %>
+    
+    <%= f.input :message, 
+      :placeholder => "Message", 
+      :label => false,
+      :as => 'text',
+      :input_html => {
+        :class => "input-xlarge message-text" 
+      }
+    %>
+    
+  </div>
+
+  <div class="form-buttons">
+    <%= submit_tag " Send ", 
+      :class=> "btn btn-send" 
+    %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<div id="flash_container_habbit_type">
+	<div id="flash_message_habbit_type">
+	  <% if flash[:notice] %>
+	      <p class="notice hide"><%= flash[:notice] %></p>
+	    <% end %>
+	  <% if flash[:error] %>
+	      <p class="error hide"><%= flash[:error] %></p>
+	  <% end %>
+	  <% if flash[:alert] %>
+	      <p class="alert hide"><%= flash[:alert] %></p>
+	  <% end %>
+	</div>
+</div>
+
+<div class="habit_select_list">
+	<table><% @habits.each do |habit| %>
+	    <tr>
+				<td class="habit_select_action">
+				  <%= form_for(:habit_type, :url => {:action => 'add', :id => habit.id}, remote: true) do -%>		    
+				    <div class="text-button sel<%= "_yes" if @habit_types.exists?(:habit_id => habit.id) %>">
+				      <%= submit_tag "", :id=> "habit_type_text_button" %>
+				    </div>
+				  <% end %>
+				</td>
+				<td class="habit_select_name">
+				    <%= form_for(:habit_type, :url => {:action => 'add', :id => habit.id}, remote: true) do -%>		    
+				    <div class="text-button sel_name<%= "_yes" if @habit_types.exists?(:habit_id => habit.id) %>">
+				      <%= submit_tag habit.name, :id=> "habit_type_text_button" %>
+				    </div>
+				  <% end %>
+				</td>
+				<td class="habit_select_right"> 
+				  <% if @current_user_id.to_s == habit.user_id.to_s %>
+					  <%= form_for(:habit, :url => {:action => 'destroy', :id => habit.id}, remote: true) do |f| -%>		    		  				<td><%= submit_tag "(delete)", :id=> "delete_text_button" %>
+					  <% end %>
+					<% end %>  
+				</td>
+			</tr>   
+	  <% end %>
+	</table>
+</div>

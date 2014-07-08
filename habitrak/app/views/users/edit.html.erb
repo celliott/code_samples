@@ -1,0 +1,21 @@
+<div class="user_new">
+	<div id="page_description">
+	  <h2>change password</h2>
+	</div>
+		<%= form_for(:user, :url => {:controller => 'users', :action => 'update'})  do |f| %>	    
+			<div class="habit_type_create">
+	      <%= display_error(:password) %>
+	      <%= f.password_field :password, :placeholder => 'password' %>
+	    </div>
+	    <div class="field">
+	      <%= display_error(:password_confirmation) %>
+	      <%= f.password_field :password_confirmation, :placeholder => 'confirm password' %>
+			</div>
+			<div><%= submit_tag "change password", :id => "change_pass", :class => "button" %></div>	
+		<% end %>
+		<%= link_to "cancel", 
+	      {:controller => 'settings'}, 
+	      id: "cancel", 
+	      :class => "button"
+	  %>
+</div>

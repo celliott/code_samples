@@ -1,0 +1,17 @@
+== Welcome to habitrak!
+
+
+habitrak is a simple habit tracker that allows you to add your own 
+private habits to track as well as view habits trends over time. It 
+is a Rails app that is hosted on Heroku. 
+
+This has been uploaded to GitHub and made public for the reason to 
+show code samples.
+
+Feel free to use any code that inspires you.
+
+Visit the site and track away.
+
+www.habitrakapp.com
+
+-chris

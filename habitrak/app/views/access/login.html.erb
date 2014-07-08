@@ -1,0 +1,24 @@
+<div class="login">
+  <%= form_for(:attempt_login, :url => {:action => 'attempt_login'}, :html => { :class => "logged_in" }) do %>
+   <div><%= text_field_tag 'email', nil, :placeholder => 'email' %></div>
+   <div><%= password_field_tag 'pass', nil, :placeholder => 'password' %></div>
+   <div class="checkbox">
+   <%= check_box 'remember_me', 'remember', :checked => true, :id => 'remember_me' %>
+     <label for="remember_me">remember me</label>  
+   </div>
+   <div><%= submit_tag "log in", :class=> "button", :id=> "log_in" %>
+        <% end %>
+   </div>
+   <%= link_to "forgot password", 
+	      reset_password_url, 
+	      id: "forgot_password", 
+	      :class => "button"
+	  %>
+</div>
+
+<div class="demo_login">
+  <p><b>demo user:</b> demo@habitrakapp.com</p>
+  <br/>
+  <p><b>demo password:</b> habitrak</p>
+</div>
+

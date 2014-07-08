@@ -1,0 +1,173 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+	height: 100%;
+}
+
+body {
+	display:block;
+	width:100%;
+	height: 100%;
+	background-image:none;
+	background-color:#fff;
+	line-height:1.4;
+}
+
+/*::selection {
+	background: #FBB040;
+	}
+::-moz-selection {
+	background: #FBB040;
+}*/
+
+.site-header {
+	position:fixed;
+	background-color:#fff;
+	margin:0;
+	height:90px;
+	width:100%;
+	border-bottom:1px solid #e5e5de;
+	z-index:999;
+	min-width:700px;
+}
+
+.logo {
+	display:block;
+	position:relative;
+	top:25px;
+	height:40px;
+	width:150px;
+	background-image:url('/assets/images/makrlogo.png');
+	background-repeat:no-repeat;
+	background-size:110%, 110%;
+}
+
+.site-content {
+	padding:110px 0 0 0;
+	display:block;
+	width:100%;
+	background-image:url('/assets/images/postbackground.png');
+	min-height:700px;
+	min-width:660px;
+}
+
+.login-wrap {
+	margin:100px 0;
+}
+
+.login-box {
+	width:450px;
+	border: 1px solid #e5e5de;
+	padding:40px 60px 0px 60px;
+	margin:0 auto 0 auto;
+}
+
+.login-btn-wrap {
+	text-align:center;
+	margin:10px 0 -10px 0;
+}
+
+.login-btn {
+	width:40%;
+	height:40px;
+	letter-spacing: 1px;
+	padding:0;
+}
+
+.logout {
+	float:right;
+	position:relative;
+	top:-5px;
+	font-size:14px;
+	text-transform:uppercase;
+	font-family: "Trade Gothic W01 Bold 2", Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;	
+}
+
+.site-footer {
+	display:block;
+	min-width:700px;
+	height:100px;
+	color:#A8A8A8;
+	font-size:13px;
+	border-top:1px solid #e5e5de;
+	background-color:#fff;
+	background-image:none;
+}
+
+.orders-content {
+	display:none;
+}
+
+#orders_datatable_length {
+	position:relative;
+	top:3px;
+}
+
+table.dataTable thead .sorting_asc {
+    background: url("/assets/images/sort_asc_orange.png") no-repeat center right
+}
+
+table.dataTable thead .sorting_desc {
+    background: url("/assets/images/sort_desc_orange.png") no-repeat center right
+}
+
+.dataTables_filter {
+	position:relative;
+	top:-1px;
+}
+
+#orders_datatable {
+	min-width:700px;
+}
+
+.dataTables_paginate {
+	position:relative;
+	top:-21px;
+}
+
+.orders-content {
+	min-width:700px;
+	padding-bottom:40px;
+}
+
+.image-table {
+	width:100%;
+	text-align:center;
+}
+
+.order {
+	margin:40px 0 60px 0;
+}
+
+.order-image {
+	display:block;
+    width: 30%; 
+    height: 30%;
+    background-position: center center;
+    background-repeat: no-repeat;
+	background-size: 100px 100px;
+}
+
+.order-item {
+	border:1px solid #e5e5de;
+	padding:20px;
+}
+
+.line {
+	border-bottom:1px solid #e5e5de;
+}
+
+.back-link {
+	position:relative;
+	top:-10px;
+}
+
+.copyright {
+	position:relative;
+	top:40px;
+	text-transform:normal;
+}
+

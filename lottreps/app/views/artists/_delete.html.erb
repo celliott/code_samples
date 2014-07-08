@@ -1,0 +1,17 @@
+<div id="center">
+  <h1>Confirm Deletion</h1>
+  <br />
+  <p>Are you sure you want to delete <%= @artist.name %> ?</p>
+  <br />
+<%= form_for(@artist, 
+  :remote => true,
+  :url => artist_path(params[:id]), 
+  :method => (:delete)
+) do |f| %>	    
+  <div class="artist_delete">
+  	<%= submit_tag "delete",
+  	:class => "btn btn-danger" %>	
+  	<% end %>
+  	<button class="btn" data-dismiss="modal" aria-hidden="true">cancel</button>
+	</div>
+</div>

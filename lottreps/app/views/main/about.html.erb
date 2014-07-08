@@ -1,0 +1,61 @@
+<div class="about-modal josefin-sans">
+  <div class="logo-header text-center">
+    <%= link_to image_tag('/assets/images/lott_reps_banner.png', 
+        :border => 0, 
+        :class => 'logo'
+      ), 
+      root_url %>
+  </div>
+  <div class="contact-info">    
+      <div id="contact_about">
+        <p>
+        <a class="contact" href="javascript:history.back()">< Back</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to("Contact", 
+          contact_url, 
+          :remote => true, 
+          :class => "about",
+          data: { 
+            toggle: 'modal',
+            target: '#modal-window' 
+          }) %>
+        </p>
+      </div>  
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div class="text-center">
+    <h3> About Lott Reps </h3> 
+    <p>P.O. Box 3607 New York, NY 10163</p>
+    <br/>
+    <div class='about_span text-center josefin-light-sans'>
+      <p>I have the great privilege of working with a truly amazing group of folks.
+      The artists whose work you see here are some of the finest image makers
+      working in the business today. Each on brings a unique blend of talent
+      and vision to their work. As a result two things happen. One is that the
+      art directors and art buyers we work with get images that jump off the
+      screen and page. These are visuals with IMPACT that will make a viewer
+      stop in their tracks. So let me invite you to stroll through the samples and 
+      see what we have to offer. The second thing that happens is that I get to 
+      come to work each morning and rub elbows with a very imaginative and
+      fun group of people.
+      <br />
+      <br />
+      Now how cool is that?
+      <br />
+      Peter Lott</p>
+      <br/>
+    </div>
+  </div>
+</div>
+
+<div class="modal hide" id="modal-window">
+  <%= render 'layouts/modal' %>
+</div>
+
+<script type="text/javascript">
+  $('.close').click(function (event) {
+	  $('.modal').modal('hide');
+  });
+</script>

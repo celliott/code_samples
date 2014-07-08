@@ -1,0 +1,17 @@
+<h4><%= message.subject %></h4>
+<% @resource.mail_form_attributes.each do |attribute, value|
+  next if value.blank? %>
+  <p>
+  <% if attribute == "artist_url" %>
+    http://lottreps.flowerstdev.com/artists/<%= value %> <br /> <br />
+  <% elsif attribute == "sender_name" %>
+    Sent by: <%= value %>
+  <% elsif attribute == "name" %>
+    Name: <%= value %>
+  <% elsif attribute == "sender_email" %>
+    From: <%= value %>
+  <% elsif attribute == "message" %>
+    Message: <%= value %>
+  <% end %> 
+  </p>
+<% end %>  

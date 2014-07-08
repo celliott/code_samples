@@ -1,0 +1,50 @@
+<div class="habit_types">
+  <div id="page_description">
+    <h3>add new habit to track</h3>
+  </div>
+	<div class="new_habit">
+  <%= form_for(:habit_type, :url => {:action => 'create'}, remote: true, :html => {:autocapitalize => 'none'})  do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f} ) %>
+    <% if !mobile_device? %>
+      <div><%= submit_tag "add", :id => "add_habit_type", :class => "button" %></div>
+    <% end %>
+  <% end %>
+    <p>new custom habits are automatically selected</p>
+    <br/>
+	</div>
+	<br />
+	<br />
+	<div id="page_description">
+	  <h3>select habits to track</h3>
+	</div>
+  <%= link_to "", 
+      {:action => 'habit_types'}, 
+      id: "habit_types", 
+      remote: true 
+  %>
+  <div class="habit_types_container"></div>
+
+	<div id="page_description">
+	  <h3>account settings</h3>
+	</div>
+	  <%= link_to "change password", 
+	      {:controller => 'users', :action => 'edit'}, 
+	      id: "change_password", 
+	      :class => "button"
+	  %>
+	  <%= link_to "delete account", 
+	      {:controller => 'users', :action => 'delete'}, 
+	      id: "delete_account", 
+	      :class => "button"
+	  %>
+
+</div>
+<% if !mobile_device? %>
+	<script type="text/javascript">
+	  $(document).ready(function() {
+	    $('#user_drop').css({height:'50px'}).show();
+		  $('#user_drop').removeClass('not_open');
+		  $('#user_menu').addClass('open');
+			$('#user_drop').addClass('open');  });
+	</script>
+<% end %>

@@ -1,0 +1,30 @@
+# seed data for lottreps
+
+# Create default admin user
+User.create(first_name: 'Chris', last_name: 'Elliott', email: 'ctelliott@gmail.com', password: 'Fulton19', admin: true)
+User.create(first_name: 'Peter', last_name: 'Lott', email: 'peter@lottreps.com', password: 'Peter123', admin: true)
+
+# Create default artists
+Artist.create(name: "Tim O'Brien", position: '1', active: true, artist_type: 1)
+Artist.create(name: 'Craig White', position: '2', active: true, artist_type: 1)
+Artist.create(name: 'Brandon Dorman', position: '3', active: true, artist_type: 1)
+Artist.create(name: 'Jim Griffin', position: '4', active: true, artist_type: 1)
+Artist.create(name: 'Ed Kurtzman', position: '5', active: true, artist_type: 1)
+Artist.create(name: 'Alan Ayers', position: '6', active: true, artist_type: 1)
+Artist.create(name: 'Michelle Grant', position: '7', active: true, artist_type: 1)
+Artist.create(name: 'Kris Keller', position: '8', active: true, artist_type: 1)
+Artist.create(name: 'Zachary Baldus', position: '9', active: true, artist_type: 1)
+Artist.create(name: 'Allen Douglas', position: '10', active: true, artist_type: 1)
+Artist.create(name: 'Trish Cramblet', position: '11', active: true, artist_type: 1)
+Artist.create(name: 'Jaime DeJesus', position: '12', active: true, artist_type: 1)
+Artist.create(name: 'Tsukushi', position: '13', active: true, artist_type: 1)
+Artist.create(name: 'Barbara Tyler', position: '14', active: true, artist_type: 1)
+Artist.create(name: 'Don Sipley', position: '15', active: true, artist_type: 1)
+Artist.create(name: 'Terry Hill', position: '16', active: true, artist_type: 1)
+Artist.create(name: 'placeholder', position: '17', active: true, artist_type: 1)
+Artist.create(name: 'Jon Paul', position: '18', active: true, artist_type: 1)
+Artist.create(name: 'Judy York', position: '19', active: true, artist_type: 1)
+Artist.create(name: 'Adult Romance', position: '1', active: true, artist_type: 2)
+Artist.create(name: 'Cozy', position: '2', active: true, artist_type: 2)
+Artist.create(name: 'Editorial', position: '3', active: true, artist_type: 2)
+Artist.create(name: 'Picture Books', position: '4', active: true, artist_type: 2)

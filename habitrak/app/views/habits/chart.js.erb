@@ -1,0 +1,58 @@
+$('#habit_chart_content').html("<%= j render(:partial => 'chart') %>");
+ 
+$(document).ready(function() {
+	$("#trends_dropdown").val('<%= cookies[:trend] %>');
+	Morris.Line({
+	  element: 'habit_chart',
+	  data: [
+	    <% @start_date.upto(@end_date).each do |date| %>
+	      <% start_date = date.change(:offset => "-04:00:00 +0000").to_datetime %>
+	      <% end_date = start_date.tomorrow %>
+      	{ d: '<%= start_date.to_date%>',
+        <% @habits.each do |habit| %>
+        <% @habit_types = UsersHabit.where('user_id=? AND habit_id=?', @current_user_id, habit.id).count %>
+      	<% daily_count = HabitsUser.where("user_id=? AND habit_id = ? AND habit_time BETWEEN ? AND ?", @current_user_id, habit.id, start_date, end_date).count %>
+      	  <%if @habit_types > 0 %>
+   				  h<%= habit.id%>: <%= daily_count %>,
+				  <% end %>
+				<% end %>
+				},
+  	<% end %>	
+		],
+		xLabelFormat: function(d) {
+      <% if cookies[:trend] == '4' || cookies[:trend] == '5' || cookies[:trend] == '6' %>
+          var trend = <%= cookies[:trend] %>;
+          var current_year = new Date().getFullYear();
+          if(d.getFullYear() == current_year && trend == 5 || d.getFullYear() == current_year && trend == 4){
+            return (d.getMonth()+1)+'/'+d.getDate();
+          }else {
+            return (d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+					}
+      <% else %>
+      return (d.getMonth()+1)+'/'+d.getDate(); 
+      <% end %>
+    },
+    xLabel: 'day',
+	  xkey: 'd',
+	  ykeys: [
+	    <% @habits.each do |habit| %>
+	      <% @habit_types = UsersHabit.where('user_id=? AND habit_id=?', @current_user_id, habit.id).count %>
+	      <%if @habit_types > 0 %>
+	        'h<%= habit.id%>',
+	      <% end %> 
+	    <% end %>
+	  ],
+	  
+	  labels: [
+	    <% @habits.each do |habit| %>
+	      <% @habit_types = UsersHabit.where('user_id=? AND habit_id=?', @current_user_id, habit.id).count %>
+	      <%if @habit_types > 0 %>
+	        '<%= habit.name%>',
+	      <% end %>  
+	    <% end %>
+	  ],	
+	  parseTime: 'false',
+	  	  
+	  hideHover: 'auto'
+	});
+});

@@ -1,0 +1,90 @@
+<% content_for :head do %>
+  <%= tag :meta, property: "og:site_name", content: "Lott Reps" %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:title", content: @artist.name %>
+  <%= tag :meta, property: "og:url", content: request.original_url %>
+  <%= tag :meta, property: "og:image", content: @artworks.first.image %>
+<% end %>
+
+<div class="josefin-sans">
+  <div class="logo-header text-center">
+    <%= render :partial => 'main/logo' %>
+    <div class="artist-page-name">
+      <h2><%= @artist.name %></h2>
+    </div>
+      <div class="artist_page_nav">
+        <div class="bio-tearsheet josefin-sans">
+          <%= link_to("Bio", 
+            bio_artist_url(@artist.id), 
+            :remote => true, 
+            data: { 
+              toggle: 'modal',
+              target: '#modal-window' 
+            }
+          ) if @artist.bio.present? %>
+          &nbsp;
+          <%= link_to("Send To A Friend", 
+            email_artist_url(@artist.id), 
+            :remote => true, 
+            data: { 
+              toggle: 'modal',
+              target: '#modal-window' 
+            }
+          ) %>
+        </div>  
+        <div id='back-to-root'>
+          <%= link_to("< Back To #{@back_url.capitalize}", "/#{@back_url}") %>
+        </div>
+      </div>
+      <div class="">  
+      <% @artworks_arr.each_slice(4) do |arr| %>
+        <% arr_position = arr.first %>
+        <div class="row-fluid">
+          <% @artworks[arr_position..(arr_position+3)].each do |a| %>
+            <div id="image_span" class='span3 popup-gallery'>
+              <%= render :partial => 'artists_grid', 
+                :locals => {:a => a} 
+              %>  
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<div class="artist-modal modal hide" id="modal-window">
+  <%= render 'layouts/modal' %>
+</div>
+
+<script type="text/javascript">
+  $('.popup-gallery').magnificPopup({
+  	delegate: 'a',
+  	type: 'image',
+  	tLoading: 'Loading image #%curr%...',
+  	mainClass: 'mfp-img-mobile',
+  	gallery: {
+  		enabled: true,
+  		navigateByImgClick: true,
+  		preload: [0,1]
+  	},
+  	image: {
+  		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+  	}
+  });
+  $(document).ready(function() {
+	  $('.close').click(function (event) {
+		  $('.modal').modal('hide');
+	  });		  
+	});
+</script>
+
+<script type="text/javascript">
+  $('.artist-thumb').hover(function() {
+      $(this).css('opacity', '.9');
+      $(this).css('transition', 'opacity 0.3s');
+  }, function() {
+      $(this).css('opacity', '1');
+  });
+</script>

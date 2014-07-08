@@ -1,0 +1,205 @@
+/* iphone fixes */
+
+.menu ul {
+  padding: 16px 2px 0 10px; 
+}
+
+.menu ul li {
+  font-size: 130%; 
+}
+
+#user_menu {
+  margin: -35px 2px 0 10px; 
+}
+
+#user_menu p:hover {
+  color: #505050;
+  cursor: pointer;
+}
+
+.header {
+  height: 20px;
+	background-size: 55%;
+}
+
+.header p {
+  font-size: 195%;
+  margin: -3px 0 0 -30px; 
+}
+
+.footer p {
+  font-size: 120%;
+  padding: 23px 0 0 0;
+}
+
+#main_content {
+  width: 100%;
+  min-width: 60%;
+  margin: 40px auto 0 auto;
+}
+
+#main_description {
+  font-size: 120%;
+  margin: 10px 0 30px 0;
+}
+
+#main_content_left {
+  min-width: 40%;
+  display: block; 
+  margin: 20px auto 0 auto;
+  width: 100%;
+  float:left;
+}
+
+#main_content_right {
+  min-width: 40%;
+  display: block; 
+  padding: 0 0 0 0px;
+  margin: 0 0 100px 0;
+  width: 100%;
+  float:left;
+}
+
+#main_item {
+  max-width:100%;
+}
+
+.main_image { 
+  width:100% !important;
+  max-width:140% !important;
+}
+
+.new_habit p {
+  font-size: 130%;
+}
+
+#page_description h3 {
+  font-size: 200%;
+}
+
+#page_description p {
+  font-size: 150%;
+}
+
+.habit_type_delete p {
+  font-size: 130%;
+}
+
+#privacy_wrap {
+  width: 90%;
+  margin: 20px auto 0 auto;
+}
+
+/* inputs and buttons */
+
+#trend_selector {
+  font-size: 150%;
+}
+
+.button {
+  font-weight:600;
+  font-size: 180%;
+  text-align: center;
+	padding: 12px 0 10px 0;
+	margin: 0 auto 15px auto;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+
+#undo {
+  font-weight:600;
+  font-size: 180%;
+  text-align: center;
+	padding: 12px 0 10px 0;
+	margin: 0 auto 15px auto;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+
+#delete_account {
+  font-weight:600;
+  font-size: 180%;
+  padding: 12px 0 10px 0;
+	margin: 0 auto 15px auto;
+  -webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+
+#trends_dropdown {
+  font-size: 90%;
+  width: 200px;
+  position: relative;
+  top: -1px;
+}
+
+.habit_select_action { 
+  padding-top: 5px;
+}
+
+.habit_select_name { 
+  width: 100%;
+  padding-top: 4px
+}
+
+
+#delete_text_button {
+	font-size: 130%;
+	padding-right: 15px;
+}
+
+.sel_name_yes input[type=submit] {
+  color: #cd1d1d;
+  width:100%;
+  font-size: 180%;
+  font-weight: bold;
+  vertical-align: middle;
+  cursor:pointer;
+  height: 100%;
+  background: none;
+  border: none;
+  border-radius: none;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  
+}
+
+.sel_name input[type=submit] {
+  color: #A0A0A0;
+  width:100%;
+  font-size: 180%;
+  font-weight: bold;
+  vertical-align: middle;
+  cursor:pointer;
+  height: 100%;
+  background: none;
+  border: none;
+  border-radius: none;
+  text-align: left;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* flash messages and errors */
+
+#flash_message_habbit_type {
+  position: relative;
+  top: -255px;
+  left: -50%;
+  width: 95%;
+  margin: 0 auto 0 auto;
+}
+
+
+.notice {
+  font-size: 180%;
+}
+
+.error {
+  font-size: 180%;
+}
+
+.alert {
+  font-size: 180%;
+}

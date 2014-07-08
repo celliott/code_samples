@@ -1,0 +1,61 @@
+<% content_for :title, 
+  "Lott Reps Admin: Artists"
+%>
+<div class="list">
+  <div class="admin-type">
+    <%= link_to "Artists", 
+      '/admin/artists/?artist_type=1', 
+      :class=> "btn btn-link btn-admin-type"
+    %> 
+    <%= link_to "Collections", 
+      '/admin/artists/?artist_type=2', 
+      :class=> "btn btn-link btn-admin-type"
+    %>
+  </div>
+    <br />
+    <%= link_to "New", 
+     "/artists_admin/new", 
+      :remote => true, 
+      'data-toggle' => 'modal', 
+      'data-target' => "#modal-window",
+      :class=> "btn btn-link btn-new"
+    %>
+    <%= link_to "New Placeholder", 
+      "/artist/new_placeholder?artist_type=#{params[:artist_type]}", 
+      :class => "btn btn-link btn-new"
+    %>
+
+  
+  <table id="artists_datatable" class="table table-hover" data-source="<%= artists_admin_url(format: "json", :artist_type => params[:artist_type]) %>">
+    <thead>
+      <tr>
+        <th>position</th>
+        <th>name</th>
+        <th>images</th>
+        <th>has bio/desc?</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<br/>
+
+<div class="artist-modal modal hide" id="modal-window">
+  <%= render 'layouts/modal' %>
+</div>
+
+<script>
+  $(document).ready(function() {
+  	var url = (window.location.href);
+  	var host = "http://" + window.location.host;
+  	url = url.replace(host,'');
+  	$('.admin-type a[href="'+url+'"]').addClass('selected');
+  	$('.close').click(function (event) {
+  	  $('.modal').modal('hide');
+    });
+  });
+</script>

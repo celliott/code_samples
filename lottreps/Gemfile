@@ -1,0 +1,105 @@
+source 'https://rubygems.org'
+
+ruby '2.0.0'
+
+gem 'rails', '3.2.13'
+gem 'rails_12factor'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+#gem 'pg'
+gem 'mysql2'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+
+end
+
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', :platforms => :ruby
+
+gem 'uglifier', '>= 1.0.3'
+
+# Twitter Bootstrap
+gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass'
+gem "bootstrap_flash_messages"
+gem 'jasny_bootstrap_extension_rails'
+gem 'jquery-ui-rails'
+
+# Colorbox
+gem 'colorbox-rails'
+
+#magnific-popup
+#gem 'magnific-popup-rails'
+
+# Image Uploader
+gem 'jquery-fileupload-rails'
+
+gem 'jquery-rails', '~> 2.1.4'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'debugger'
+
+# Authentication
+gem 'devise'
+
+# Form Helper
+gem 'simple_form'
+
+# DataTables
+gem 'jquery-datatables-rails' #, git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
+# Pagination
+gem 'will_paginate'
+
+# For growl style flash messages
+gem "gritter", "1.0.3"
+
+# For pretty urls
+gem "friendly_id", "~> 4.0.9"
+
+group :development do
+  gem 'thin'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'meta_request'
+  # gem 'bullet'
+  # gem 'rails-footnotes', '>= 3.7.9'
+  # gem "lol_dba"
+  # gem "rails_best_practices"
+  # gem 'debugger'
+end
+
+# For Contact Form
+gem 'mail_form'
+
+# S3 Gem
+gem  'aws-s3'
+
+# RMagick is magic
+gem "rmagick", :require => 'RMagick'
+
+# for running crons on eb
+gem 'clockwork'
+
+#gem 'coderay', '1.1.0'
+
+gem 'roadie'

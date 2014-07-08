@@ -1,0 +1,17 @@
+<p>Simply drag images to this page to add images for <%= @artist.name %>!</p>
+<%= s3_uploader_form post: "/artworks?artist_slug=#{@artist.slug}&artist_id=#{params[:artist_id]}", as: "artwork[image]" do %>
+  <br/ >
+  <span class="hide">
+    <i class="icon-plus icon-white"></i>
+    <%= file_field_tag :file, multiple: false %>
+  </span>
+<% end %>
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <br />
+  <br />
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>

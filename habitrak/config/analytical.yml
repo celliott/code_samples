@@ -1,0 +1,11 @@
+production:
+  mixpanel:
+    key: afa3bd00842e792b4c50d3ad36b7b611
+  google:
+    key: UA-40050702-1
+development:
+  mixpanel:
+    key: afa3bd00842e792b4c50d3ad36b7b611
+  google:
+    key: UA-40050702-1
+test:

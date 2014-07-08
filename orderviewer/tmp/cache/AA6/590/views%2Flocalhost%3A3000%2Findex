@@ -1,0 +1,70 @@
+o: ActiveSupport::Cache::Entry:@valueI"©<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title>Makr Order Viewer | Login</title>
+  	<link href="/stylesheets/application.css" media="screen" rel="stylesheet" />
+  	<script src="/javascripts/vendor/custom.modernizr.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="L1O0gi4BHnbdyVhxtSeRvzmMjbOwiZh2aLFnoKEBb5M=" name="csrf-token" />
+  </head>
+
+  <body>
+  
+  <header class="site-header">
+    <div class="row">
+      <div class="small-1 large-1 columns">&nbsp;</div>
+      <div class="small-10 large-10 columns">
+        <div class="logo"></div>
+      </div>
+      <div class="small-1 large-1 columns">&nbsp;</div>
+    </div>
+  </header>
+  
+    <div class="site-content">
+      <div class="row ">
+  <div class="small-2 large-3 columns">&nbsp;</div>
+  <div class="small-8 large-6 columns login-wrap"><div class="login-box">
+
+  <br />
+  <form accept-charset="UTF-8" action="/sessions" class="simple_form login" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="L1O0gi4BHnbdyVhxtSeRvzmMjbOwiZh2aLFnoKEBb5M=" /></div>
+    
+      <div class="input email optional login_email"><input autofocus="autofocus" class="string email optional" id="login_email" name="login[email]" placeholder="Email" type="email" /></div>  
+      <input class="password optional" id="login_password" label="false" name="login[password]" placeholder="Password" type="password" />
+      <div class="input hidden login_title"><input class="hidden" id="login_title" name="login[title]" type="hidden" value="L1O0gi4BHnbdyVhxtSeRvzmMjbOwiZh2aLFnoKEBb5M=" /></div>
+    <br />
+    <div class="login-btn-wrap">
+    <input class="button login-btn" name="commit" type="submit" value="GO" />
+    </div>
+    <br />
+</form></div>  </div>
+  <div class="small-2 large-3 columns">&nbsp;</div>
+</div>
+
+
+    </div>
+    
+    <footer class="site-footer">
+      <div class="row">
+        <div class="small-2 large-1 columns">&nbsp;</div>
+        <div class="small-8 large-10 columns copyright"><p class="text-center"><strong>Â© 2013 MAKR. </p></strong></div>
+        <div class="small-2 large-1 columns">&nbsp;</div>
+      </div>
+    </footer>
+    
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>
+:ET:@created_atf1386108239.844207:@expires_in0

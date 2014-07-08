@@ -1,0 +1,26 @@
+local: &local
+  adapter: postgresql
+  host: localhost
+  username: 
+  password: 
+  pool: 5
+  
+# for connecting to another app's heroku db
+remote: &remote 
+  adapter: postgresql
+  host: <%= ENV['DB_HOST'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
+
+development:
+  <<: *local
+  database: orderviewer_development
+
+test:
+  <<: *local    
+  database: orderviewer_test
+
+production:
+  <<: *remote
+  database: orderviewer_production

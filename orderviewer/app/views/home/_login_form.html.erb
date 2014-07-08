@@ -1,0 +1,33 @@
+<div class="login-box">
+  <% content_for :title, "Makr Order Viewer | Login" %>
+
+  <br />
+  <%= simple_form_for(:login, :url => sessions_path, :method => :post ) do |f| %>
+    
+      <%= f.input :email, 
+        :required => false, 
+        :label => false, 
+        :autofocus => true, 
+        :placeholder => 'Email' 
+      %>  
+      <%= f.input_field :password, 
+        :label => false, 
+        :required => false, 
+        :placeholder => 'Password' 
+      %>
+      <%=
+        f.input :title, 
+          :as => :hidden, 
+          :name => request_forgery_protection_token.to_s,
+          :input_html => { :value => form_authenticity_token }
+      %>
+    <br />
+    <div class="login-btn-wrap">
+    <%= f.button :submit, 
+      "GO", 
+      :class => 'login-btn' 
+    %>
+    </div>
+    <br />
+  <% end %>
+</div>  

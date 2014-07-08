@@ -1,0 +1,25 @@
+<% content_for :title, "Makr Order Viewer | Orders"%>
+
+<div class="row orders-content">
+  <div class="large-1 columns">&nbsp;</div>
+  <div class="large-10 columns">
+  <%= button_to "Process New Orders", process_orders_url, :class => "button right" %>
+  <%= flash[:notice] %>
+  <br />
+  <br />
+  <table id="orders_datatable" class="table" data-source="<%= orders_url(format: "json") %>">
+    <thead>
+      <tr>
+        <th>status</th>
+        <th>order #</th>
+        <th>customer</th>
+        <th>order date</th>
+        <th>items</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+    </div>
+    <div class="large-1 columns"> </div>
+  </div>

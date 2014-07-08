@@ -1,0 +1,26 @@
+<%= link_to image_tag('/assets/images/lott_reps_banner.png', 
+    :border => 0, 
+    :class => 'logo'
+  ), 
+  root_url 
+%>
+<div class="contact-info">    
+    <div id="contact_about">
+      <p>
+      <%= link_to("Contact", 
+        contact_url, 
+        :remote => true, 
+        :class => "contact",
+        data: { 
+          toggle: 'modal',
+          target: '#modal-window' 
+        }
+      ) %>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to("About", 
+        about_url, 
+        :class => "about",
+      ) %>
+      </p>
+    </div>  
+</div>

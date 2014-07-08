@@ -1,0 +1,36 @@
+<%= link_to "", 
+    {:action => 'chart'}, 
+    id: "charts", 
+    remote: true 
+%>
+
+<%= form_for(
+ 			:chart, 
+ 			:url => {:action => 'chart'}, 
+ 			:html => { :id => 'date_selectors' }, 
+ 			remote: true) do |f| 
+%>
+
+<%= submit_tag "refresh", :id => "chart_refresh" %> 
+<% end %>
+
+<div id="trend_selector"> 
+totals for: 
+<%= select_tag :trend, 
+			("<option selected value='1'>current week</option>
+			  <option value='2'>last week</option>
+			  <option value='3'>last 2 weeks</option>
+			  <option value='4'>last month</option> 
+			  <option value='5'>last 3 months</option>
+			  <option value='6'>last 6 months</option>"
+			).html_safe, 
+			:'data-remote' => 'true', 
+			:'data-url' => url_for(:action => 'chart'), 
+			:id => "trends_dropdown",
+			:onchange => 'setTrendCookie()'
+%>
+</div> 
+
+
+
+<div id="habit_chart_content"></div> 

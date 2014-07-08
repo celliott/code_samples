@@ -1,0 +1,41 @@
+<% content_for :title, "Lott Reps | Login"%>
+
+
+    <div class="login">
+      <br />
+      <br />
+      <br />
+      <%= simple_form_for(resource, :class => 'form-horizontal', :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div class="">
+          <%= f.input :email, 
+            :required => false, 
+            :label => false, 
+            :autofocus => true, 
+            :placeholder => 'email address' 
+          %>  
+          <%= f.input_field :password, 
+            :label => false, 
+            :required => false, 
+            :placeholder => 'password' 
+          %>
+          <%= f.input :remember_me, 
+            :label => false, 
+            :inline_label => 'remember me', 
+            :as => :boolean,
+            :input_html => { :checked => true }
+          %> 
+        </div>
+        <br />
+        <%= f.button :submit, "sign in", :class => 'btn login-btn btn-inverse' %>
+        &nbsp;
+      <% end %>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

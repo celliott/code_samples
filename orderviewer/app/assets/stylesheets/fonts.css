@@ -1,0 +1,32 @@
+/************************************************
+*
+* Trade Gothic Fonts
+*
+************************************************/
+
+@font-face {
+  font-family: 'Trade Gothic W01 Roman';
+  src: url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT.eot'); 
+  src: local('☺'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT.woff') format('woff'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT.ttf') format('truetype'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT.svg#font') format('svg');
+}
+
+@font-face {
+  font-family: 'Trade Gothic W01 Bold 2';
+  src: url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT-Bold.eot'); 
+  src: local('☺'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT-Bold.woff') format('woff'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT.ttf-Bold') format('truetype'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT-Bold.svg#font') format('svg');
+}
+
+@font-face {
+  font-family: 'Trade Gothic Bold 2 Condensed';
+  src: url('http://web.makrplace.com/wp-content/themes/makr/fonts/fonts/TradeGothicLT-BdCn20.eot');
+  src: local('☺'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT-BdCn20.woff') format('woff'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT-BdCn20.ttf') format('truetype'),
+        url('http://web.makrplace.com/wp-content/themes/makr/fonts/TradeGothicLT-BdCn20.svg#font') format('svg');
+}

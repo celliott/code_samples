@@ -1,0 +1,5 @@
+$('.modal').modal('hide');
+
+<% flash.each do |name, msg| %>
+  jQuery.gritter.add({image:'/assets/<%= name %>.png',title:'<%= name %>',text:'<%= msg %>'});
+<% end %>

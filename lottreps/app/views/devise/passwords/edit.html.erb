@@ -1,0 +1,42 @@
+<h2>change your password</h2>
+<br/>
+<%= simple_form_for(resource, 
+  :as => resource_name, 
+  :url => password_path(resource_name), 
+  :html => { :method => :put }) do |f| 
+%>
+  <%= f.error_notification %>
+
+  <%= f.input :reset_password_token, :as => :hidden %>
+  <%= f.full_error :reset_password_token %>
+
+  <div class="form-inputs">
+    <%= f.input :password, 
+      :label => false, 
+      :placeholder => 'password',
+      :required => true, 
+      :autofocus => true 
+    %>
+    <%= f.input :password_confirmation, 
+      :label => false, 
+      :placeholder => 'password confirmation', 
+      :required => true 
+    %>
+  </div>
+  <br />
+    <%= f.button :submit, 
+      "change my password",
+      :class => 'btn btn-primary' 
+      %>
+      &nbsp;
+      <%= link_to "cancel", 
+        :back, :class => 'btn' 
+      %>
+<% end %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

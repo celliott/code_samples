@@ -1,0 +1,67 @@
+<% content_for :head do %>
+  <%= tag :meta, property: "og:site_name", content: "Lott Reps" %>
+  <%= tag :meta, property: "og:type", content: "website" %>
+  <%= tag :meta, property: "og:title", content: "Lott Reps: Collections" %>
+  <%= tag :meta, property: "og:url", content: request.original_url %>
+  <%= tag :meta, property: "og:image", content: "http://lottreps.flowerstdev.com/assets/images/fb_logo.jpg" %>
+<% end %>
+
+<div class="josefin-sans">
+  <div class="logo-header text-center">
+    <%= render :partial => 'logo' %>
+    <br/ >
+    <br/ > 
+    <div class="artist-collection">
+        <%= link_to('Artists ', artists_url, :class => "to-artists") %>
+        &nbsp;
+        <%= link_to('Collections', collections_url, :class => "to-collections") %>
+    </div>
+    <br/ >
+    <br/ >
+
+    <% @collections_arr.each_slice(4) do |arr| %>
+      <% arr_position = arr.first %>
+      <div class="row-fluid artist-grid">
+        <% @collection[arr_position..(arr_position+3)].each do |a| %>
+          <div id="image_span" class='span3'>
+            <%= render :partial => 'main_grid', 
+              :locals => {:a => a} 
+            %>  
+          </div>
+        <% end %>
+      </div>   
+    <% end %>  
+  </div>
+</div>
+
+<div class="modal hide" id="modal-window">
+  <%= render 'layouts/modal' %>
+</div>
+
+<script>
+  $(document).ready(function() {
+  	var host = "http://" + window.location.host + "/";
+  	var url = (window.location.href);
+  	if(url == host) {
+  		url = host + "artists";
+  	}
+    $('.artist-collection a[href="'+url+'"]').addClass('active');
+    $('.close').click(function (event) {
+		  $('.modal').modal('hide');
+	  });
+  });
+</script>
+
+<script type="text/javascript">
+  $('.frontpage-artist-thumb').hover(function() {
+      $(this).css('opacity', '.9');
+      $(this).css('transition', 'opacity 0.3s');
+  }, function() {
+      $(this).css('opacity', '1');
+  });
+  
+  var count = $('.artist-grid:last-child').children('.span3').length;
+  if(count < 4) {
+    $('.artist-grid:last-child').css('left', '13%');
+  }
+</script>
