@@ -1,9 +1,13 @@
 == Chris Elliot Code Samples
 
-= habitrak - my first Rails app. A simple multi-user habit tracker
+=== habitrak 
+# my first Rails app. A simple multi-user habit tracker
 
-= lottreps - a rails site for an artest rep. Front-end and custom CMS
+=== lottreps 
+# a rails site for an artest rep. Front-end and custom CMS
 
-= orderviewer - an internal rails site that searches S3 for new orders, downloads processes images/files and updates API.
+=== orderviewer 
+# an internal rails site that searches S3 for new orders, downloads processes images/files and updates API.
 
-= Makr_OrderProcessServer - a ruby app that monitors n API looking for new orders. Processes new orders, copies files to S3 and to ftp site, send notification emails and updates the API. Also monitors a gmail account for order updates from the printer and updates the API and sends notifications accordingly.
+=== Makr_OrderProcessServer 
+# a ruby app that monitors n API looking for new orders. Processes new orders, copies files to S3 and to ftp site, send notification emails and updates the API. Also monitors a gmail account for order updates from the printer and updates the API and sends notifications accordingly.
