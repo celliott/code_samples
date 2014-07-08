@@ -1,10 +1,10 @@
 == Chris Elliot Code Samples
 
 === habitrak 
-# my first Rails app. A simple multi-user habit tracker
+# my first Rails app. A simple multi-user habit tracker. http://www.habitrakapp.com
 
 === lottreps 
-# a rails site for an artest rep. Front-end and custom CMS
+# a rails site for an artest rep. Front-end and custom CMS. http://www.lottreps.com
 
 === orderviewer 
 # an internal rails site that searches S3 for new orders, downloads processes images/files and updates API.
