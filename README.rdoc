@@ -1,4 +1,4 @@
-== Chris Elliot Code Samples
+== Chris Elliott Code Samples
 
 === habitrak 
 # My first Rails app. A simple multi-user habit tracker. Concept, Design and Code. http://www.habitrakapp.com
