@@ -17,8 +17,8 @@ order_number = ""
 success = ""
 
 status_hash = {
-	:status 				=> 	0,
-	:msg 						=> 	'started',
+	:status 		=> 	0,
+	:msg 			=> 	'started',
 	:started_time		=>	started_full
 }
 
@@ -28,10 +28,10 @@ if pending_emails.any?
 	pending_emails.each do |email| 
 		receipt = 0
 		email_hash = {
-			:recipient 						=> 	email["recipient"],
-			:subject 							=> 	email["subject"],
-			:template 						=> 	email["template"],
-			:template_data 				=> 	email["template_data"],
+			:recipient 		=> 	email["recipient"],
+			:subject 		=> 	email["subject"],
+			:template 		=> 	email["template"],
+			:template_data 		=> 	email["template_data"],
 		}
 			
 		begin
@@ -101,10 +101,10 @@ if pending_emails.any?
 		end
 				
 		order_hash = {
-			:email					=> 	email_hash[:recipient],
-			:subject				=>	email_hash[:subject],
-			:message				=> 	email_hash[:template].to_s,
-			:status					=>	'pending_email',
+			:email		=> 	email_hash[:recipient],
+			:subject	=>	email_hash[:subject],
+			:message	=> 	email_hash[:template].to_s,
+			:status		=>	'pending_email',
 		}	
 		
 		if email["template"] != 'none'
