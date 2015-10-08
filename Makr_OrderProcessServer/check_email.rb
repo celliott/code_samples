@@ -1,6 +1,5 @@
 #!/usr/bin/ruby
 
-# dependencies
 require 'rubygems'
 require 'logger'
 require File.join(File.dirname(__FILE__), 'email_handler.rb')
@@ -10,7 +9,7 @@ email = EmailHandler.new
 process = ProcessHandler.new
 started_full = Time.new
 
-order_hash = Hash.new
+order_hash = {}
 status_hash = {
 	:status		=>	0,
 	:msg			=>	'started'

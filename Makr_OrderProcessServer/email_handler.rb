@@ -1,8 +1,5 @@
 #!/usr/bin/ruby
 
-# dependencies
-# gem install mail
-
 require 'rubygems'
 require 'net/imap'
 require 'net/smtp'
@@ -45,7 +42,6 @@ EOM
 		end		 
 	end
 
-
 	#checks if order update has order_number and if status == SH, then it must have a tracking number and ship method
 	def update_ok?(order_hash)
 		if !order_hash[:order_number]
@@ -56,7 +52,6 @@ EOM
 			return true
 		end 
 	end
-
 
 	# check print.status@happy.is for new messages and respond accordingly
 	def checkNewMessageAndProcess(process, order_hash, status_hash)
@@ -74,8 +69,6 @@ EOM
 		)
 		
 		imap.select('INBOX')
-		
-		#imap.search("UNSEEN").slice(0, 1).each do |message_id|
 				
 		imap.search("UNSEEN").each do |message_id|
 			envelope = imap.fetch(message_id, "ENVELOPE")[0].attr["ENVELOPE"]
@@ -125,7 +118,6 @@ EOM
 		end
 
 	end
-	
 	
 	# send status email(s)
 	def sendStatusEmail(order_hash, status_hash)
@@ -218,7 +210,6 @@ EOM
 		
 	end
 	
-	
 	# assembles and sends email
 	def assembleAndSendEmail(status_hash, order_hash)
 		email_template = $CONFIG[:email_template]
@@ -233,7 +224,6 @@ EOM
 
 	end 
 	
-
 	# create body text for order
 	def createPrinterReceivedEmailBody(order_hash)
 		body = <<EOM	
@@ -255,7 +245,6 @@ EOM
 		body
 	end
 
-	
 	# create body text for order item
 	def itemForEmailBody(order_hash, item_hash)
 		tmp_path = File.join(File.dirname(__FILE__), 'orders', order_hash[:order_number])
@@ -325,7 +314,6 @@ EOM
 		body
 	end 
 	
-	
 		# create body text for status complete w/o tracking
 	def createCompleteNoTrackingErrorEmailBody(order_hash)
 		body = <<EOM	
@@ -335,7 +323,6 @@ EOM
 
 		body
 	end 
-
 	
 	# creates body for printer received mail containing order and items details
 	def createPrinterReceivedEmail(order_hash, status_hash)

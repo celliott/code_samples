@@ -4,10 +4,10 @@ require 'rubygems'
 require 'logger'
 require File.join(File.dirname(__FILE__), 'process_handler.rb')
 
-12.times do		
-	# initiate ProcessHandler and EmailHandler Classes
-	process = ProcessHandler.new
-	
+# initiate ProcessHandler and EmailHandler Classes
+process = ProcessHandler.new
+
+12.times do
 	# check to make sure that too many processes aren't running and there is enough free memory
 	process.checkAvailableResources
 	
