@@ -17,8 +17,8 @@ order_number = ""
 success = ""
 
 status_hash = {
-	:status 		=> 	0,
-	:msg 			=> 	'started',
+	:status			=>	0,
+	:msg			=>	'started',
 	:started_time		=>	started_full
 }
 
@@ -28,18 +28,18 @@ if pending_emails.any?
 	pending_emails.each do |email| 
 		receipt = 0
 		email_hash = {
-			:recipient 		=> 	email["recipient"],
-			:subject 		=> 	email["subject"],
-			:template 		=> 	email["template"],
-			:template_data 		=> 	email["template_data"],
+			:recipient		=>	email["recipient"],
+			:subject		=>	email["subject"],
+			:template			=>	email["template"],
+			:template_data		=>	email["template_data"],
 		}
 			
 		begin
 			if email["template_data"] != 'null' || email_hash[:template] != 'none'
 				email_hash[:template_data] = JSON.parse(email["template_data"])
-			end	
+			end 
 		rescue
-		end	
+		end 
 		
 		if email_hash[:template] == 'none'
 			email_hash[:template] = email_hash[:template_data]	
@@ -55,7 +55,7 @@ if pending_emails.any?
 		elsif email_hash[:template] == 'email_changed'
 			email_hash[:template] = $CONFIG[:email_changed]
 		elsif email_hash[:template] == 'password_forgot'
-			email_hash[:template] = $CONFIG[:email_password_forgot]	
+			email_hash[:template] = $CONFIG[:email_password_forgot] 
 		elsif email_hash[:template] == 'password_changed'
 			email_hash[:template] = $CONFIG[:email_password_changed]
 		elsif email_hash[:template] == 'referral_invitation'
@@ -80,7 +80,7 @@ if pending_emails.any?
 							email_hash[:template] = process.constructReceipt(order_number, status_hash)
 							success = "receipt constructed for #{email_hash[:recipient]}"
 						else
-						  email_hash[:template] = email_hash[:template].gsub("[#{replace}]", value)
+							email_hash[:template] = email_hash[:template].gsub("[#{replace}]", value)
 						end
 					end
 				end
@@ -101,34 +101,34 @@ if pending_emails.any?
 		end
 				
 		order_hash = {
-			:email		=> 	email_hash[:recipient],
+			:email		=>	email_hash[:recipient],
 			:subject	=>	email_hash[:subject],
-			:message	=> 	email_hash[:template].to_s,
+			:message	=>	email_hash[:template].to_s,
 			:status		=>	'pending_email',
-		}	
+		} 
 		
 		if email["template"] != 'none'
 			email_template = $CONFIG[:email_template]
 			order_hash[:body] = email_template.gsub('[stylesheet]', $CONFIG[:email_stylesheet]).gsub('[message_content]', order_hash[:message])
 		else
 			order_hash[:body] = email_hash[:template].to_s
-		end	
+		end 
 		
 		order_hash[:body].force_encoding("UTF-8")
 		order_hash[:subject].force_encoding("UTF-8")
 		
 		if status_hash[:status] == 0		
 			begin
-	    	email_handler.sendMail(order_hash)
-	    	status_hash[:msg] = "message sent to #{order_hash[:email]}"
-	    rescue
-	    	status_hash[:status] = 1
-	  		status_hash[:msg] = 'unable to send email'
-	    end	
-    end
-    
-    puts Time.new
-    puts "status: #{status_hash[:msg]}"
+				email_handler.sendMail(order_hash)
+				status_hash[:msg] = "message sent to #{order_hash[:email]}"
+			rescue
+				status_hash[:status] = 1
+				status_hash[:msg] = 'unable to send email'
+			end 
+		end
+		
+		puts Time.new
+		puts "status: #{status_hash[:msg]}"
 	end
 
 else

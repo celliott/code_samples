@@ -1,12 +1,10 @@
 #!/usr/bin/ruby
 
-
 running_count = `sudo ps cax | grep -E "init_pending_em" | wc -l`
 if running_count.to_i > 1
 	puts 'quitting, check init_pending_emails is already running'
 	exit
 end
-
 
 5.times do
 	begin
@@ -26,4 +24,5 @@ end
 	end
 	
 	sleep 60
+	
 end
